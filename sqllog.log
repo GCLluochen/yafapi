@@ -1,0 +1,14 @@
+------20180608 10:24:00----------
+
+------------用户表-----------------
+create table `user`(
+`id` int(1) AUTO_INCREMENT NOT NULL COMMENT '自增主键',
+`uname` VARCHAR(64) NOT NULL DEFAULT '' COMMENT '用户名',
+`pwd` VARCHAR(32) NOT NULL DEFAULT '' COMMENT '密码',
+`mobile` VARCHAR(11) NOT NULL DEFAULT '' COMMENT '绑定手机',
+`email` VARCHAR(40) NOT NULL DEFAULT '' COMMENT '邮箱',
+`reg_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '注册时间',
+`upd_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+PRIMARY KEY(`id`), 
+INDEX `uname` (`uname`) USING BTREE COMMENT '用户名索引'
+)ENGINE=InnoDB DEFAULT CHARACTER SET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT ='用户信息表';
